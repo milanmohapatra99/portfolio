@@ -1,13 +1,23 @@
-import Image from "next/image";
+"use client";
+
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Team from "@/components/Team";
+import Services from "@/components/Services";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <h1 className=" text-5xl">
-          Dummy Home
-        </h1>
-      </main>
-    </div>
+    <main className="min-h-screen w-full overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <About />
+      <Team />
+      <Services />
+      <Contact />
+      <Footer />
+    </main>
   );
 }
