@@ -98,7 +98,8 @@ export default function About() {
           ))}
         </div>
 
-        {/* Stats */}
+        {/* Stats — hidden until we have real numbers */}
+        {false && (
         <div className="grid grid-cols-2 md:grid-cols-4 gap-7.5 max-w-225 mx-auto">
           {stats.map((stat) => (
             <div
@@ -136,6 +137,7 @@ export default function About() {
             </div>
           ))}
         </div>
+        )}
       </div>
     </section>
   );

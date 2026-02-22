@@ -5,28 +5,28 @@ import { useEffect, useRef } from "react";
 const members = [
   {
     name: "Milan Mohapatra",
-    initials: "MM",
+    photo: "/pics/milan.jpg",
     role: "Full Stack Developer",
     bio: "Full-stack developer specializing in modern web technologies and scalable architectures.",
     linkedin: "https://www.linkedin.com/in/milanmohapatra63/",
   },
   {
     name: "Shifa Farhad",
-    initials: "SF",
+    photo: "/pics/shifa.jpg",
     role: "UI/UX Designer",
     bio: "Creative designer crafting beautiful and intuitive user experiences for digital products.",
     linkedin: "https://www.linkedin.com/in/shifa-farhad-088212207/",
   },
   {
     name: "Pritam Kumar Manohari",
-    initials: "PR",
+    photo: "/pics/pritam.png",
     role: "Full Stack Developer",
     bio: "Expert in server-side development, databases, and API design for robust applications.",
     linkedin: "https://www.linkedin.com/in/pritam-kumar-manohari-148b16251/",
   },
   {
     name: "Sujal Kumar Ghosh",
-    initials: "SG",
+    photo: "/pics/sujal.png",
     role: "Backend & Infra Engineer",
     bio: "Full stack focused backend and infrastructure engineer building scalable systems and reliable deployments.",
     linkedin: "https://www.linkedin.com/in/sujalkrghosh/",
@@ -93,23 +93,22 @@ export default function Team() {
           >
             {/* Avatar */}
             <div
-              className="relative w-45 h-45 mx-auto mb-6.25 rounded-3.75 overflow-hidden p-0.75"
+              className="relative w-45 h-45 mx-auto mb-6.25 rounded-full overflow-hidden p-0.75"
               style={{ background: "linear-gradient(135deg, #6C63FF, #00F5A0)" }}
             >
-              {/* Initials placeholder */}
-              <div
-                className="absolute top-0.75 left-0.75 right-0.75 bottom-0.75 flex items-center justify-center text-[3rem] font-bold text-[#00F5A0] rounded-3"
-                style={{ background: "rgba(26, 31, 56, 0.95)" }}
-              >
-                {member.initials}
-              </div>
+              {/* Circular photo */}
+              <img
+                src={member.photo}
+                alt={member.name}
+                className="absolute top-0.75 left-0.75 right-0.75 bottom-0.75 w-[calc(100%-6px)] h-[calc(100%-6px)] object-cover rounded-full"
+              />
 
               {/* LinkedIn overlay on hover */}
               <a
                 href={member.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="absolute top-0.75 left-0.75 right-0.75 bottom-0.75 flex items-center justify-center rounded-3 opacity-0 transition-opacity duration-300 z-10 no-underline group/linkedin"
+                className="absolute top-0.75 left-0.75 right-0.75 bottom-0.75 flex items-center justify-center rounded-full opacity-0 transition-opacity duration-300 z-10 no-underline group/linkedin"
                 style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(4px)" }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "1")}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0")}
